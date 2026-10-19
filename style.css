@@ -684,3 +684,68 @@ footer {
     transition: none !important;
   }
 }
+
+
+/* ===== POLAROID + RESPONSIVE FIXES ===== */
+/* The image fills its frame without stretching. Adjust object-position to choose the crop. */
+.photo-placeholder { width:100%; height:auto; aspect-ratio: 4 / 5; overflow:hidden; display:block; }
+.portrait-photo { display:block; width:100%; height:100%; object-fit:cover; object-position:center 35%; }
+.polaroid { width:min(68%, 360px); }
+/* Prevent grid children and long text from forcing horizontal scrolling. */
+.hero-grid > *, .card-grid > *, .project-grid > *, .play-box > * { min-width:0; }
+.hero h1, h1 { overflow-wrap:normal; }
+.photo-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.photo { width:100%; min-width:0; height:auto; aspect-ratio: 8 / 5; min-height:0; padding:0; overflow:hidden; }
+.photo img { display:block; width:100%; height:100%; min-height:0; object-fit:cover; }
+.modal-image { min-height:0; }
+.modal-image img { display:block; height:auto; max-height:65vh; }
+@media(max-width:1100px) {
+  .navbar { gap:18px; }
+  .navbar nav { gap:15px; flex-wrap:wrap; justify-content:flex-end; }
+  .hero-grid { grid-template-columns:minmax(0,1fr) minmax(0,.85fr); }
+  h1 { font-size:clamp(54px,6.7vw,90px); }
+}
+@media(max-width:900px) {
+  .hero-grid { grid-template-columns:minmax(0,1fr); gap:10px; }
+  .hero-art { max-width:500px; height:490px; }
+  .photo-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .navbar nav { gap:12px; }
+}
+@media(max-width:650px) {
+  .navbar { padding:16px 5%; }
+  .logo { font-size:11px; max-width:70%; }
+  .navbar nav { flex-wrap:nowrap; justify-content:flex-start; gap:20px; }
+  .hero { padding:28px 6% 20px; }
+  .hero-grid { min-height:0; }
+  h1 { font-size:clamp(43px,10.5vw,64px); letter-spacing:-2px; line-height:1.04; }
+  .hero .intro { max-width:100%; }
+  .hero-art { height:390px; max-width:370px; margin:20px auto 8px; }
+  .polaroid { width:66%; top:12px; left:15%; padding:9px; transform:rotate(5deg); }
+  .photo-placeholder { height:auto; aspect-ratio:4/5; }
+  .polaroid p { font-size:18px; margin:9px 0 4px; }
+  .sticker { width:76px; height:76px; right:0; top:25px; font-size:9px; }
+  .ticket { bottom:8px; left:1%; padding:10px 14px; font-size:9px; }
+  .ticket h3 { font-size:22px; margin:6px 0; }
+  .section { padding:65px 6%; }
+  h2 { font-size:clamp(43px,11vw,65px); letter-spacing:-1px; }
+  .card-grid, .project-grid, .play-box { grid-template-columns:minmax(0,1fr); gap:20px; }
+  .scrap-card { padding:22px; }
+  .scrap-card h3 { font-size:30px; }
+  .photo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .photo { border-width:5px; aspect-ratio:4/5; }
+  .photo-modal { width:calc(100% - 28px); padding:12px; border-width:5px; }
+  .play-box > div:first-child { padding:24px; }
+  .play-box h3 { font-size:32px; }
+  .smiley { font-size:90px; min-height:220px; }
+  .marquee { font-size:10px; line-height:1.8; letter-spacing:1px; }
+  .contact-links a { padding:12px 15px; }
+  footer { padding:24px 6%; }
+}
+@media(max-width:360px) {
+  .hero-art { height:330px; }
+  .polaroid { width:65%; }
+  .sticker { width:65px; height:65px; font-size:8px; }
+  .ticket h3 { font-size:19px; }
+  h1 { font-size:42px; }
+}
