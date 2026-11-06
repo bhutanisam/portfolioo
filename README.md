@@ -1,4 +1,4 @@
-# BHUTANISM :)
+# BHUTANI'S WORLD :)
 
 Hi, I'm Samriddhi, and this is my little corner of the internet.
 
